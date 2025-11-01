@@ -26,7 +26,7 @@
 
         <% posts.forEach(post => { %>
          <div class="post-preview">
-          <a href="post.html">
+          <a href="/posts/<%= post._id %>">
             <h2 class="post-title">
               <%= post.title %>
             </h2>
@@ -34,9 +34,7 @@
               <%= post.detail %>
             </h3>
           </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on <%= post.dateCreated.toDateString() %></p>
+          <p class="post-meta">Posted on <%= post.dateCreated.toLocaleDateString("tr-TR", {day: '2-digit', month: 'long', year: 'numeric'}) %></p>
         </div>
         <hr>
         <% }) %>
