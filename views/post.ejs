@@ -33,7 +33,12 @@
               <p>
                 <%= post.detail %>
               </p>
-
+              <div class="mt-4">
+                <a href="/posts/edit/<%= post._id %>" class="btn btn-primary">Update</a>
+                <form method="POST" action="/posts/<%= post._id %>?_method=DELETE" style="display:inline;">
+                  <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                </form>
+              </div>
               <img class="img-fluid" src="/img/post-sample-image.jpg" alt="">
 
               <span class="caption text-muted">To go places and do things that have never been done before – that’s what
